@@ -6,12 +6,12 @@ const jwt = require("jsonwebtoken")
 const sendEmail = require("../utils/email")
 
 
+exports.sendFn = () => {
+
+}
+
 exports.registerUser = asyncHandler(async (req, res) => {
     const { name, email, phone, password } = req.body
-    // Validation\\
-    if (!name || !email || !password) {
-        return res.status(400).json({ message: "All fields are required" });
-    }
     if (!validator.isEmail(email)) {
         return res.status(400).json({ message: "Please provide a valid email" });
     }
